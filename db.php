@@ -1,17 +1,13 @@
 <?php
-$servername = "localhost";     // Usually localhost
-$username   = "root";          // Use your database username
-$password   = "";              // Use your database password (empty for XAMPP by default)
-$dbname     = "focus first"; // Change to your actual database name
+$host = getenv("db4free.net");
+$user = getenv("DB_USER");
+$pass = getenv("DB_PASS");
+$db   = getenv("DB_NAME");
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $pass, $db);
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// Optional: Set charset to support UTF-8 characters
-$conn->set_charset("utf8mb4");
 ?>
